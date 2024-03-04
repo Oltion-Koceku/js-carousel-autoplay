@@ -34,3 +34,8 @@ Al click delle frecce, oltre al cambio di immagine attiva, gestire il cambio di 
 ## svolgimento 2 :
 1. creiamo un intervallo per lo scroll delle immagini con setInterval
 2. creiamo la funzione che fara andare il carosello all'infinito
+
+- **BONUS esercizio 2:**
+1. per fermare il il setinterval sull'hover, usiamo una funzione di addevemtlisterner "mouseover"
+2. fermiamo il setInterval con clear interval
+3. rifacciamo partire il setInterval con "mouseleave" sepre di addevenlistener
