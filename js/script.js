@@ -12,7 +12,7 @@ const colonna1 = document.querySelector(".colonna-1");
 const colonna2 = document.querySelector(".colonna-2");
 const buttonSu = document.querySelector(".button-su");
 const buttonGiu = document.querySelector(".button-giu");
-
+const colonna0 = document.querySelector(".colonna-0")
 
 for (let i = 0; i < imgs.length; i++) {
   const imgL = imgs[i];
@@ -63,9 +63,15 @@ buttonGiu.addEventListener("click", function(){
   
 });
 
-setInterval(scroll, 1000);
+timeSec = setInterval(scroll, 3000);
 
+colonna0.addEventListener("mouseover", function(){
+  clearInterval(timeSec);
+})
 
+colonna0.addEventListener("mouseleave", function(){
+   timeSec = setInterval(scroll, 3000);
+})
 // Function
 
 function scroll(){
@@ -82,4 +88,8 @@ function scroll(){
   
   console.log(contatore);
 }
+
+// function stopLoop(){
+//   clearInterval(scroll);
+// }
 
