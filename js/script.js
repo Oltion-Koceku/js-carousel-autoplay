@@ -13,6 +13,7 @@ const colonna2 = document.querySelector(".colonna-2");
 const buttonSu = document.querySelector(".button-su");
 const buttonGiu = document.querySelector(".button-giu");
 
+
 for (let i = 0; i < imgs.length; i++) {
   const imgL = imgs[i];
   console.log(imgL);
@@ -36,8 +37,8 @@ buttonSu.addEventListener("click", function(){
   imgSmall[contatore].classList.remove("trasparente");
   imgSmall[contatore].classList.add("bordo-bianco");
   imgAll[contatore].classList.remove("d-none");
-
-
+  
+  
   if(contatore === 0){
     buttonSu.classList.add("d-none");
   }else if(contatore === imgs.length - 2){
@@ -53,7 +54,7 @@ buttonGiu.addEventListener("click", function(){
   imgSmall[contatore].classList.remove("trasparente")
   imgAll[contatore].classList.remove("d-none")
   imgSmall[contatore].classList.add("bordo-bianco")
-
+  
   if(contatore === imgs.length - 1){
     buttonGiu.classList.add("d-none");
   }else if(contatore === 1){
@@ -62,18 +63,23 @@ buttonGiu.addEventListener("click", function(){
   
 });
 
+setInterval(scroll, 1000);
+
 
 // Function
 
-// setInterval(scroll, 3000);
 function scroll(){
   imgAll[contatore].classList.add("d-none");
   imgSmall[contatore].classList.remove("bordo-bianco");
   imgSmall[contatore].classList.add("trasparente");
-  
-  contatore--;
+  contatore++;
+  if(contatore >= imgs.length){
+  contatore = 0;
+  } 
   imgSmall[contatore].classList.remove("trasparente");
   imgSmall[contatore].classList.add("bordo-bianco");
   imgAll[contatore].classList.remove("d-none");
+  
+  console.log(contatore);
 }
 
